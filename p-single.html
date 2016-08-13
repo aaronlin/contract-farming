@@ -11,6 +11,7 @@
 <!-- //Custom Theme files -->
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+<link href="css/spinner.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/timeline.css" type="text/css" rel="stylesheet" media="all">
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 <link type="text/css" rel="stylesheet" href="css/JFFormStyle-1.css" />
@@ -36,6 +37,11 @@
 <!--//pop-up-->
 </head>
 <body>
+
+	<div class="loading-spinner-container">
+		<div class="loading-spinner"></div>
+	</div>
+
 	<!--header-->
 	<div class="header">
 		<div class="container">
@@ -129,8 +135,17 @@
 								<h4 class="farmer"></h4>
 								<h4 class="product"></h4>
 								<div style="text-align: center; margin: 10px 0">
-									<img src="images/rice1.jpg" alt="" width='300px'style="margin-right: 5px"/>
-									<img src="images/rice2.jpg" alt="" width='300px'/>
+
+
+
+
+									<!-- <img class="image1" src="images/rice1.jpg" alt="" width='300px'style="margin-right: 5px"/>
+									<img class="image2" src="images/rice2.jpg" alt="" width='300px'/> -->
+
+									<img class="image1" alt="" width='300px'style="margin-right: 5px"/>
+									<img class="image2" alt="" width='300px'/>
+
+
 								</div>
 								<!-- <p>Jump to: <a href="#">Over View</a>|<a href="#">農友介紹</a>|<a href="#">產銷履歷</a></p> -->
 								<section id="cd-timeline" class="cd-container">
@@ -146,11 +161,34 @@
 											 // id:
 										 },
 										 error: function(xhr) {
+											 $(".loading-spinner-container").css({"display": "none"});
 											 for (var i = 0; i < 5; i++) {
 												 $(".cd-container").append("<div class='cd-timeline-block'><div class='cd-timeline-img cd-picture'><img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg' alt='Picture'></div><div class='cd-timeline-content'><h2>Title of section 1</h2><p>pppp</p><span class='cd-date'>Jan 14</span></div></div>")
 											 }
 										 },
 										 success: function(res) {
+
+											 switch (category_id) {
+											 	case "367": //carrot
+													$('.image1').attr('src','images/carrot/1.jpg' );
+													$('.image2').attr('src','images/carrot/2.jpg' );
+													break;
+												case "647":
+													$('.image1').attr('src','images/rice1.jpg' );
+											 		$('.image2').attr('src','images/rice2.jpg' );
+													break;
+											 	default:
+													break;
+											 }
+
+											//  if (category_id === '367') {
+											 // 	 	img = "images/carrot/" + (index%6+1) + ".jpg";
+											// 		$('.image1').attr('src','http://localhost:8080/images/1/myImage.png' );
+	 									// 		 $('.image2').attr('src','http://localhost:8080/images/1/myImage.png' );
+											 // 	}
+
+
+											 $(".loading-spinner-container").css({"display": "none"});
 											 var resumes = JSON.parse(res);
 											 console.log('haha', resumes)
 											 $(".product").html('作物： ' + resumes[0].product);
@@ -163,9 +201,9 @@
 														 <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg' alt='Picture'>\
 													 </div>\
 													 <div class='cd-timeline-content'>\
+													 		<h2>" + resume.date + "</h2>\
 														 <h2>" + resume.operation + "</h2>\
-														 <p>" + resume.detail + "</p>\
-														 <span class='cd-date'>" + resume.date + "</span>\
+														 <h2>" + resume.detail + "</h2>\
 													 </div>\
 												 </div>")
 											 })

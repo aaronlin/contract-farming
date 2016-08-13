@@ -11,6 +11,7 @@
 <!-- //Custom Theme files -->
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+<link href="css/spinner.css" type="text/css" rel="stylesheet" media="all">
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 <link type="text/css" rel="stylesheet" href="css/JFFormStyle-1.css" />
 <!-- js -->
@@ -61,6 +62,11 @@
 <!--//pop-up-->
 </head>
 <body>
+
+	<div class="loading-spinner-container">
+		<div class="loading-spinner"></div>
+	</div>
+
 	<!--header-->
 	<div class="header">
 		<div class="container">
@@ -72,7 +78,6 @@
 				<div class="header-dropdown">
 					<div class="emergency-grid">
 						<ul>
-							<li class="call">+886 91239214</li>
 						</ul>
 					</div>
 					<div class="clearfix"> </div>
@@ -82,8 +87,6 @@
 			<div class="nav-top">
 				<div class="top-nav">
 					<span class="menu"><img src="images/menu.png" alt="" /></span>
-					<ul class="nav1">
-						<li class="active"><a href="index.html">Home</a></li>
 					</ul>
 					<div class="clearfix"> </div>
 					<!-- script-for-menu -->
@@ -97,46 +100,6 @@
 							</script>
 						<!-- /script-for-menu -->
 				</div>
-				<div class="dropdown-grids">
-						<div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
-							<div id="loginBox">
-								<form id="loginForm">
-									<div class="login-grids">
-										<div class="login-grid-left">
-											<fieldset id="body">
-												<fieldset>
-													<label for="email">Email Address</label>
-													<input type="text" name="email" id="email">
-												</fieldset>
-												<fieldset>
-													<label for="password">Password</label>
-													<input type="password" name="password" id="password">
-												</fieldset>
-												<input type="submit" id="login" value="Sign in">
-												<label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember me</i></label>
-											</fieldset>
-											<span><a href="#">Forgot your password?</a></span>
-											<div class="or-grid">
-												<p>OR</p>
-											</div>
-											<div class="social-sits">
-												<div class="facebook-button">
-													<a href="#">Connect with Facebook</a>
-												</div>
-												<div class="chrome-button">
-													<a href="#">Connect with Google</a>
-												</div>
-												<div class="button-bottom">
-													<p>New account? <a href="signup.html">Signup</a></p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-				</div>
-				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
@@ -322,219 +285,32 @@
 					</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-					<div class="col-md-9 product-right">
-						<div class="product-right-grids">
-							<div class="product-right-top">
-								<div class="p-left">
-									<div class="p-right-img">
-										<a href="p-single.html"> </a>
-									</div>
-								</div>
-								<div class="p-right">
-									<div class="col-md-6 p-right-left">
-										<a href="p-single.html">水稻 [雲林縣]</a>
-										<div class="p-right-price">
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</div>
-										<p>水稻是吳把拔的好朋友，泰國米、糯米、黑米、短米，在四季裡輪替產出就像一個民間的水稻研究所。</p>
-										<!--<p class="p-call">+1 234 567 890</p>-->
-									</div>
-									<div class="col-md-6 p-right-right">
-										<h6>Rating : 5/5</h6>
-										<p>farmers name</p>
-										<p>(123) Views</p>
-										<span class="p-offer">$140</span><!--<span class="p-last-price">$230</span>-->
-									</div>
-									<div class="clearfix"> </div>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-						</div>
-						<div class="product-right-grids">
-							<div class="product-right-top">
-								<div class="p-left">
-									<div class="p-right-img p-right-img1">
-										<a href="p-single.html"> </a>
-									</div>
-								</div>
-								<div class="p-right">
-									<div class="col-md-6 p-right-left">
-										<a href="p-single.html">水稻 [台南市]</a>
-										<div class="p-right-price">
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</div>
-										<p>惜福版的水稻有些歪、有些疤、有些裂、有些斷，適合煮甜湯、煮稀飯、做餡料，歡迎和我們一起把握大地之愛。</p>
-										<!--<p class="p-call">+1 234 567 890</p>-->
-									</div>
-									<div class="col-md-6 p-right-right">
-										<h6>Rating : 3.0/5</h6>
-										<p>farmers name</p>
-										<p>(123) Views</p>
-										<span class="p-offer">$240</span><!--<span class="p-last-price">$230</span>-->
-									</div>
-									<div class="clearfix"> </div>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-						</div>
-						<div class="product-right-grids">
-							<div class="product-right-top">
-								<div class="p-left">
-									<div class="p-right-img p-right-img2">
-										<a href="p-single.html"> </a>
-									</div>
-								</div>
-								<div class="p-right">
-									<div class="col-md-6 p-right-left">
-										<a href="p-single.html">水稻 [雲林縣]</a>
-										<div class="p-right-price">
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</div>
-										<p>在南投北端中海拔的國姓，有個水稻的家園名叫樂果村。地理環境三面環山，適合種植這類的稻米。</p>
-										<!--<p class="p-call">+1 234 567 890</p>-->
-									</div>
-									<div class="col-md-6 p-right-right">
-										<h6>Rating : 3.8/5</h6>
-											<p>farmers name</p>
-										<p>(123) Views</p>
-										<span class="p-offer">$120</span><!--<span class="p-last-price">$230</span>-->
-									</div>
-									<div class="clearfix"> </div>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-						</div>
-						<div class="product-right-grids">
-							<div class="product-right-top">
-								<div class="p-left">
-									<div class="p-right-img p-right-img3">
-										<a href="p-single.html"> </a>
-									</div>
-								</div>
-								<div class="p-right">
-									<div class="col-md-6 p-right-left">
-										<a href="p-single.html">水稻 [彰化縣]</a>
-										<div class="p-right-price">
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</div>
-										<p>仁慈的四季有水稻，是熟成採收的，特徵為果形底部飽滿。</p>
-										<!--<p class="p-call">+1 234 567 890</p>-->
-									</div>
-									<div class="col-md-6 p-right-right">
-										<h6>Rating : 4.1/5</h6>
-											<p>farmers name</p>
-										<p>(123) Views</p>
-										<span class="p-offer">$140</span><!--<span class="p-last-price">$230</span>-->
-									</div>
-									<div class="clearfix"> </div>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-						</div>
-						<div class="product-right-grids">
-							<div class="product-right-top">
-								<div class="p-left">
-									<div class="p-right-img p-right-img4">
-										<a href="p-single.html"> </a>
-									</div>
-								</div>
-								<div class="p-right">
-									<div class="col-md-6 p-right-left">
-										<a href="p-single.html">有機水稻 [雲林縣]</a>
-										<div class="p-right-price">
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</div>
-										<p>水稻軟硬平衡度都勝過一般市面上的稻米，是幾家頂級超市的王牌。</p>
-										<!--<p class="p-call">+1 234 567 890</p>-->
-									</div>
-									<div class="col-md-6 p-right-right">
-										<h6>Rating : 3.4/5</h6>
-											<p>farmers name</p>
-										<p>(123) Views</p>
-										<span class="p-offer">$380</span><!--<span class="p-last-price">$230</span>-->
-									</div>
-									<div class="clearfix"> </div>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-						</div>
-						<div class="product-right-grids">
-							<div class="product-right-top">
-								<div class="p-left">
-									<div class="p-right-img p-right-img5">
-										<a href="p-single.html"> </a>
-									</div>
-								</div>
-								<div class="p-right">
-									<div class="col-md-6 p-right-left">
-										<a href="p-single.html">水稻 [花蓮縣]</a>
-										<div class="p-right-price">
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-											<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-										</div>
-										<p>水稻口感Ｑ滑有彈性，甜酸皆具 ; 但是外型肥短肉質Q滑 ; 水交外皮像似有層白粉，甜度高帶微香。</p>
-										<!--<p class="p-call">+1 234 567 890</p>-->
-									</div>
-									<div class="col-md-6 p-right-right">
-										<h6>Rating : 4.2/5</h6>
-										<p>farmers name</p>
-										<p>(123) Views</p>
-										<span class="p-offer">$360</span><!--<span class="p-last-price">$230</span>-->
-									</div>
-									<div class="clearfix"> </div>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-						</div>
+					<div class='col-md-9 product-right'>
 					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-		</div>
-		<!-- //container -->
-	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -551,22 +327,38 @@
 	 			 type: 'GET',
 	 			 error: function(xhr) {
 	 			 	console.log('err');
+					$(".loading-spinner-container").css({"display": "none"});
 	 			 },
 	 			 success: function(res) {
+					 $(".loading-spinner-container").css({"display": "none"});
+					 console.log('success');
 	 				 var products = JSON.parse(res);
 	 				 console.log(products);
-	 				 products.forEach( function(product) {
+
+
+
+
+	 				 products.forEach( function(product, index) {
+
+						 var img = product.img_path;
+
+							if (category_id === '367') {
+							 	img = "images/carrot/" + (index%6+1) + ".jpg";
+							}
+
+							console.log(img);
+
 	 						$(".col-md-9.product-right").prepend("\
 	 							<div class='product-right-grids'>\
 	 							 <div class='product-right-top'>\
 	 								 <div class='p-left'>\
 	 									 <div class='p-right-img'>\
-	 										 <a id='" + product.product_id + "' class='product-image' href='p-single.html' style='background: url(../" + product.img_path + ") no-repeat 0 0; background-size: cover; display: block;'> </a>\
+	 										 <a id='" + product.product_id + "' class='product-image' href='p-single.html' style='background: url(../" + img + ") no-repeat 0 0; background-size: cover; display: block;'> </a>\
 	 									 </div>\
 	 								 </div>\
 	 								 <div class='p-right'>\
 	 									 <div class='col-md-6 p-right-left'>\
-	 										 <a href='p-single.html'>" + product.product + "</a>\
+											  <a href='p-single.html'>" + product.product + "</a>\
 	 										 <div class='p-right-price'>\
 	 											 <span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
 	 											 <span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
@@ -575,7 +367,7 @@
 	 									 </div>\
 	 									 <div class='col-md-6 p-right-right'>\
 	 										 <h6>Rating : 3.0/5</h6>\
-	 										 <p>farmers name</p>\
+	 										 <p>" + product.farmer + "</p>\
 	 										 <p>(123) Views</p>\
 	 										 <span class='p-offer'>$240</span>\
 	 									 </div>\
@@ -592,7 +384,188 @@
 	 				});
 	 			 }
 	 		 })
-			}
+		 }else {
+			 $(".loading-spinner-container").css({"display": "none"});
+							 $(".col-md-9.product-right").prepend("\
+								<div class='product-right-grids'>\
+									<div class='product-right-top'>\
+										<div class='p-left'>\
+											<div class='p-right-img'>\
+												<a href='p-single.html'> </a>\
+											</div>\
+										</div>\
+										<div class='p-right'>\
+											<div class='col-md-6 p-right-left'>\
+												<a href='p-single.html'>水稻 [雲林縣]</a>\
+												<div class='p-right-price'>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+												</div>\
+												<p>水稻是吳把拔的好朋友，泰國米、糯米、黑米、短米，在四季裡輪替產出就像一個民間的水稻研究所。</p>\
+											</div>\
+											<div class='col-md-6 p-right-right'>\
+												<h6>Rating : 5/5</h6>\
+												<p>farmers name</p>\
+												<p>(123) Views</p>\
+												<span class='p-offer'>$140</span>\
+											</div>\
+											<div class='clearfix'> </div>\
+										</div>\
+										<div class='clearfix'> </div>\
+									</div>\
+								</div>\
+								<div class='product-right-grids'>\
+									<div class='product-right-top'>\
+										<div class='p-left'>\
+											<div class='p-right-img p-right-img1'>\
+												<a href='p-single.html'> </a>\
+											</div>\
+										</div>\
+										<div class='p-right'>\
+											<div class='col-md-6 p-right-left'>\
+												<a href='p-single.html'>水稻 [台南市]</a>\
+												<div class='p-right-price'>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+												</div>\
+												<p>惜福版的水稻有些歪、有些疤、有些裂、有些斷，適合煮甜湯、煮稀飯、做餡料，歡迎和我們一起把握大地之愛。</p>\
+											</div>\
+											<div class='col-md-6 p-right-right'>\
+												<h6>Rating : 3.0/5</h6>\
+												<p>farmers name</p>\
+												<p>(123) Views</p>\
+												<span class='p-offer'>$240</span>\
+											</div>\
+											<div class='clearfix'> </div>\
+										</div>\
+										<div class='clearfix'> </div>\
+									</div>\
+								</div>\
+								<div class='product-right-grids'>\
+									<div class='product-right-top'>\
+										<div class='p-left'>\
+											<div class='p-right-img p-right-img2'>\
+												<a href='p-single.html'> </a>\
+											</div>\
+										</div>\
+										<div class='p-right'>\
+											<div class='col-md-6 p-right-left'>\
+												<a href='p-single.html'>水稻 [雲林縣]</a>\
+												<div class='p-right-price'>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+												</div>\
+												<p>在南投北端中海拔的國姓，有個水稻的家園名叫樂果村。地理環境三面環山，適合種植這類的稻米。</p>\
+											</div>\
+											<div class='col-md-6 p-right-right'>\
+												<h6>Rating : 3.8/5</h6>\
+													<p>farmers name</p>\
+												<p>(123) Views</p>\
+												<span class='p-offer'>$120</span>\
+											</div>\
+											<div class='clearfix'> </div>\
+										</div>\
+										<div class='clearfix'> </div>\
+									</div>\
+								</div>\
+								<div class='product-right-grids'>\
+									<div class='product-right-top'>\
+										<div class='p-left'>\
+											<div class='p-right-img p-right-img3'>\
+												<a href='p-single.html'> </a>\
+											</div>\
+										</div>\
+										<div class='p-right'>\
+											<div class='col-md-6 p-right-left'>\
+												<a href='p-single.html'>水稻 [彰化縣]</a>\
+												<div class='p-right-price'>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+												</div>\
+												<p>仁慈的四季有水稻，是熟成採收的，特徵為果形底部飽滿。</p>\
+											</div>\
+											<div class='col-md-6 p-right-right'>\
+												<h6>Rating : 4.1/5</h6>\
+													<p>farmers name</p>\
+												<p>(123) Views</p>\
+												<span class='p-offer'>$140</span>\
+											</div>\
+											<div class='clearfix'> </div>\
+										</div>\
+										<div class='clearfix'> </div>\
+									</div>\
+								</div>\
+								<div class='product-right-grids'>\
+									<div class='product-right-top'>\
+										<div class='p-left'>\
+											<div class='p-right-img p-right-img4'>\
+												<a href='p-single.html'> </a>\
+											</div>\
+										</div>\
+										<div class='p-right'>\
+											<div class='col-md-6 p-right-left'>\
+												<a href='p-single.html'>有機水稻 [雲林縣]</a>\
+												<div class='p-right-price'>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+												</div>\
+												<p>水稻軟硬平衡度都勝過一般市面上的稻米，是幾家頂級超市的王牌。</p>\
+											</div>\
+											<div class='col-md-6 p-right-right'>\
+												<h6>Rating : 3.4/5</h6>\
+													<p>farmers name</p>\
+												<p>(123) Views</p>\
+												<span class='p-offer'>$380</span>\
+											</div>\
+											<div class='clearfix'> </div>\
+										</div>\
+										<div class='clearfix'> </div>\
+									</div>\
+								</div>\
+								<div class='product-right-grids'>\
+									<div class='product-right-top'>\
+										<div class='p-left'>\
+											<div class='p-right-img p-right-img5'>\
+												<a href='p-single.html'> </a>\
+											</div>\
+										</div>\
+										<div class='p-right'>\
+											<div class='col-md-6 p-right-left'>\
+												<a href='p-single.html'>水稻 [花蓮縣]</a>\
+												<div class='p-right-price'>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+													<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+												</div>\
+												<p>水稻口感Ｑ滑有彈性，甜酸皆具 ; 但是外型肥短肉質Q滑 ; 水交外皮像似有層白粉，甜度高帶微香。</p>\
+											</div>\
+											<div class='col-md-6 p-right-right'>\
+												<h6>Rating : 4.2/5</h6>\
+												<p>farmers name</p>\
+												<p>(123) Views</p>\
+												<span class='p-offer'>$360</span>\
+											</div>\
+											<div class='clearfix'> </div>\
+										</div>\
+										<div class='clearfix'> </div>\
+									</div>\
+								</div>\
+							</div>\
+							<div class='clearfix'> </div>\
+						</div>\
+					</div>\
+				</div>\
+			 ")
+		 }
 	 </script>
 
 
