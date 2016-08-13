@@ -336,6 +336,14 @@
 	 				 console.log(products);
 
 
+					 var desc = [
+						 '水稻是吳把拔的好朋友，泰國米、糯米、黑米、短米，在四季裡輪替產出就像一個民間的水稻研究所。',
+							'惜福版的水稻有些歪、有些疤、有些裂、有些斷，適合煮甜湯、煮稀飯、做餡料，歡迎和我們一起把握大地之愛。' ,
+							'在南投北端中海拔的國姓，有個水稻的家園名叫樂果村。地理環境三面環山，適合種植這類的稻米。',
+							'仁慈的四季有水稻，是熟成採收的，特徵為果形底部飽滿。',
+							'水稻軟硬平衡度都勝過一般市面上的稻米，是幾家頂級超市的王牌。',
+							'水稻口感Ｑ滑有彈性，甜酸皆具 ; 但是外型肥短肉質Q滑 ; 水交外皮像似有層白粉，甜度高帶微香。'
+					 ]
 
 
 	 				 products.forEach( function(product, index) {
@@ -364,6 +372,7 @@
 	 											 <span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
 	 											 <span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
 	 										 </div>\
+											 <p>" + ( desc[index%6+1] || '' ) + "</p>\
 	 									 </div>\
 	 									 <div class='col-md-6 p-right-right'>\
 	 										 <h6>Rating : 3.0/5</h6>\
