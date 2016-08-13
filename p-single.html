@@ -5,12 +5,13 @@
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Govihar Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Govihar Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //Custom Theme files -->
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+<link href="css/timeline.css" type="text/css" rel="stylesheet" media="all">
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 <link type="text/css" rel="stylesheet" href="css/JFFormStyle-1.css" />
 <!-- js -->
@@ -20,11 +21,11 @@
 <!-- fonts -->
 <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,700,500italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<!-- //fonts -->	
+<!-- //fonts -->
 <script type="text/javascript">
 		$(document).ready(function () {
 			$('#horizontalTab').easyResponsiveTabs({
-				type: 'default', //Types: default, vertical, accordion           
+				type: 'default', //Types: default, vertical, accordion
 				width: 'auto', //auto or any width like 600px
 				fit: true   // 100% fit in a container
 			});
@@ -32,7 +33,7 @@
 	</script>
 <!--pop-up-->
 <script src="js/menu_jquery.js"></script>
-<!--//pop-up-->	
+<!--//pop-up-->
 </head>
 <body>
 	<!--header-->
@@ -40,14 +41,14 @@
 		<div class="container">
 			<div class="header-grids">
 				<div class="logo">
-					<h1><a  href="index.html"><span>Contract</span>Farming</a></h1>
+					<h1><a  href="index.html"><span>用產銷履歷</span>搭一座橋</a></h1>
 				</div>
 				<!--navbar-header-->
 				<div class="header-dropdown">
 					<div class="emergency-grid">
-						<ul>
-							<li class="call">+886 91239214</li>
-						</ul>
+						<!-- <ul> -->
+							<!-- <li class="call">+886 91239214</li> -->
+						<!-- </ul> -->
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -56,24 +57,24 @@
 			<div class="nav-top">
 				<div class="top-nav">
 					<span class="menu"><img src="images/menu.png" alt="" /></span>
-					<ul class="nav1">
-						<li class="active"><a href="index.html">Home</a></li>
-					</ul>
+					<!-- <ul class="nav1"> -->
+						<!-- <li class="active"><a href="index.html">Home</a></li> -->
+					<!-- </ul> -->
 					<div class="clearfix"> </div>
 					<!-- script-for-menu -->
-							 <script> 
+							 <script>
 							   $( "span.menu" ).click(function() {
 								 $( "ul.nav1" ).slideToggle( 300, function() {
 								 // Animation complete.
 								  });
 								 });
-							
+
 							</script>
 						<!-- /script-for-menu -->
 				</div>
-				<div class="dropdown-grids">
+				<!-- <div class="dropdown-grids">
 						<div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
-							<div id="loginBox">                
+							<div id="loginBox">
 								<form id="loginForm">
 									<div class="login-grids">
 										<div class="login-grid-left">
@@ -109,7 +110,7 @@
 								</form>
 							</div>
 						</div>
-				</div>
+				</div> -->
 				<div class="clearfix"> </div>
 			</div>
 		</div>
@@ -124,78 +125,92 @@
 				<div class="single-page">
 						<div class="col-md-8 single-gd-lt">
 							<div class="single-pg-hdr">
-								<h2>兩寶蕉</h2>
-								<p>吳東杰</p>
-								<p>Jump to: <a href="#">Over View</a>|<a href="#">農友介紹</a>|<a href="#">產銷履歷</a></p>
+								<!-- <h2 class="title"></h2> -->
+								<h4 class="farmer"></h4>
+								<h4 class="product"></h4>
+								<div style="text-align: center; margin: 10px 0">
+									<img src="images/rice1.jpg" alt="" width='300px'style="margin-right: 5px"/>
+									<img src="images/rice2.jpg" alt="" width='300px'/>
+								</div>
+								<!-- <p>Jump to: <a href="#">Over View</a>|<a href="#">農友介紹</a>|<a href="#">產銷履歷</a></p> -->
+								<section id="cd-timeline" class="cd-container">
+								<script>
+									 var pid = '1050810014400025';
+									 $.ajax({
+										 url: 'http://localhost:8080/resume/' + pid,
+										 type: 'GET',
+										 data: {
+											 // id:
+										 },
+										 error: function(xhr) {
+											 for (var i = 0; i < 5; i++) {
+												 $(".cd-container").append("<div class='cd-timeline-block'><div class='cd-timeline-img cd-picture'><img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg' alt='Picture'></div><div class='cd-timeline-content'><h2>Title of section 1</h2><p>pppp</p><span class='cd-date'>Jan 14</span></div></div>")
+											 }
+										 },
+										 success: function(res) {
+											 var resumes = JSON.parse(res);
+											 console.log('haha', resumes)
+											 $(".product").html('作物： ' + resumes[0].product);
+											 $(".farmer").html('農家： ' + resumes[0].farmer);
+											// $(".title").html(resumes[0].farmer + ' | ' + resumes[0].product);
+											 resumes.forEach( function(resume) {
+												 $(".cd-container").append("\
+												 <div class='cd-timeline-block'>\
+													 <div class='cd-timeline-img cd-picture'>\
+														 <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg' alt='Picture'>\
+													 </div>\
+													 <div class='cd-timeline-content'>\
+														 <h2>" + resume.operation + "</h2>\
+														 <p>" + resume.detail + "</p>\
+														 <span class='cd-date'>" + resume.date + "</span>\
+													 </div>\
+												 </div>")
+											 })
+										 }
+									 })
+							 </script>
 							</div>
-							<div class="flexslider">
-											<ul class="slides">
-												<li data-thumb="images/p1.jpg">
-													<img src="images/p1.jpg" alt=""/>
-												</li>
-												<li data-thumb="images/p2.jpg">
-													<img src="images/p2.jpg" alt=""/>
-												</li>
-												<li data-thumb="images/p3.jpg">
-													<img src="images/p3.jpg" alt=""/>
-												</li>
-												<li data-thumb="images/p4.jpg">
-													<img src="images/p4.jpg" alt=""/>
-												</li>
-												<li data-thumb="images/p1.jpg">
-													<img src="images/p1.jpg" alt=""/>
-												</li>
-												<li data-thumb="images/p2.jpg">
-													<img src="images/p2.jpg" alt=""/>
-												</li>
-												<li data-thumb="images/p3.jpg">
-													<img src="images/p3.jpg" alt=""/>
-												</li>
-											</ul>
-							</div>
+							<!-- <img src="images/p1.jpg" alt="" width='300px'/> -->
+
 										<!-- FlexSlider -->
-									<script defer src="js/jquery.flexslider.js"></script>
-										<script>
-										// Can also be used with $(document).ready()
-										$(window).load(function() {
-										  $('.flexslider').flexslider({
-											animation: "slide",
-											controlNav: "thumbnails"
-										  });
-										});
-										</script>
 
 						</div>
 						<div class="col-md-4 single-gd-rt">
 							<div class="spl-btn">
 								<div class="spl-btn-bor">
+									 <!-- style="text-align: right" -->
 									<a href="#">
-										<span class="glyphicon glyphicon-tag" aria-hidden="true"></span>											
+										<span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
 									</a>
-									<p>現正熱賣</p>	
+									<p>契作訂購</p>
+									<!-- <h6>契作訂購</h6> -->
 									<script>
 										$(document).ready(function(){
-										$('[data-toggle="tooltip"]').tooltip();   
+										$('[data-toggle="tooltip"]').tooltip();
 										});
 									</script>
 								</div>
 								<div class="sp-bor-btn text-right">
-									<h4><span>$8,750</span> $4,850</h4>
-									<p class="best-pri">目前還有 5畝</p>
-									<a class="best-btn" href="booking.html">購買</a>
+									<h5>
+										<!-- <span>$8,750</span>  -->
+										總數：5畝
+									</h5>
+									<h5>剩餘：60%</h5>
+									<!-- <p class="best-pri">剩餘：60%</p> -->
+									<a class="best-btn" href="booking.html" style="display: block; text-align: center; margin-top: 20px;">購買</a>
 								</div>
 							</div>
-							<div class="map-gd">
+							<!-- <div class="map-gd">
 								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63718.72916803739!2d102.31975295000002!3d3.489618449999993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31ceba2007355f81%3A0xd2ff1ad6a3ca801!2sMentakab%2C+Pahang%2C+Malaysia!5e0!3m2!1sen!2sin!4v1439535856431"></iframe>
-							</div>
+							</div> -->
 							<div class="other-comments">
 								<div class="comments-head">
-									<h3>值得信任的好賣家</h3>
+									<h3>值得信任的好農家</h3>
 									<p>4.5/5</p>
 									<div class="clearfix"></div>
 								</div>
 								<div class="comments-bot">
-									<p>"東杰叔叔非常熱情，有時可收到他在香蕉箱中放的親筆手寫小簡訊噢！"</p>
+									<p>"東杰叔叔非常熱情，有時可收到他放在稻米箱中的親筆手寫小簡訊噢！"</p>
 									<h4><span class="glyphicon glyphicon-minus" aria-hidden="true"></span> 阿明</h4>
 								</div>
 								<div class="comments-bot">
@@ -213,263 +228,42 @@
 				<!--//single-page-->
 			</div>
 			<div class="c-rooms">
-				<div class="p-table">
-					<div class="p-table-grids">
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>青仁黑豆 [苗栗]</h6>
-							</div>
-							<div class="p-table-grid-info">
-								<a href="#"><img src="images/p2.jpg" alt=""></a>
-								<div class="room-basic-info">
-									<a href="#">Fusce vestibulum ultricies rutrum</a>
-									<h6>abcd</h6>
-									<p>Vestibulum ullamcorper(condimentum luctus)</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>Options</h6>
-							</div>
-							<div class="rate-features">
-								<ul>
-									<li>Morbi mollis mattis</li>
-									<li>Donec egestas</li>
-									<li>Donec non risus</li>
-									<li>Pellentesque sem</li>
-									<li>Sed ut urna id metus</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>金額</h6>
-							</div>
-							<div class="avg-rate">
-								<h5>Recommended for you</h5>
-								<p>Price is now:</p>
-								<span class="p-offer">$140</span>
-								<span class="p-last-price">$230</span>
-							</div>
-						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>產銷履歷</h6>
-							</div>
-							<div class="book-button-column">
-								<a href="#">abcd</a>
-							</div>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<div class="p-table">
-					<div class="p-table-grids">
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>有機冬菇</h6>
-							</div>
-							<div class="p-table-grid-info">
-								<a href="#"><img src="images/p1.jpg" alt=""></a>
-								<div class="room-basic-info">
-									<a href="#">Fusce vestibulum ultricies rutrum</a>
-									<h6>ancd</h6>
-									<p>Vestibulum ullamcorper(condimentum luctus)</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>Options</h6>
-							</div>
-							<div class="rate-features">
-								<ul>
-									<li>Morbi mollis mattis</li>
-									<li>Donec egestas</li>
-									<li>Donec non risus</li>
-									<li>Pellentesque sem</li>
-									<li>Sed ut urna id metus</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>金額</h6>
-							</div>
-							<div class="avg-rate">
-								<h5>Recommended for you</h5>
-								<p>Price is now:</p>
-								<span class="p-offer">$140</span>
-								<span class="p-last-price">$230</span>
-							</div>
-						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>產銷履歷</h6>
-							</div>
-							<div class="book-button-column">
-								<a href="#">abcd</a>
-							</div>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<div class="p-table">
-					<div class="p-table-grids">
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>日曬留胚米</h6>
-							</div>
-							<div class="p-table-grid-info">
-								<a href="#"><img src="images/p2.jpg" alt=""></a>
-								<div class="room-basic-info">
-									<a href="#">Fusce vestibulum ultricies rutrum</a>
-									<h6>abcd</h6>
-									<p>Vestibulum ullamcorper(condimentum luctus)</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>Options</h6>
-							</div>
-							<div class="rate-features">
-								<ul>
-									<li>Morbi mollis mattis</li>
-									<li>Donec egestas</li>
-									<li>Donec non risus</li>
-									<li>Pellentesque sem</li>
-									<li>Sed ut urna id metus</li>
-								</ul>
-							</div>
-						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>金額</h6>
-							</div>
-							<div class="avg-rate">
-								<h5>Recommended for you</h5>
-								<p>Price is now:</p>
-								<span class="p-offer">$140</span>
-								<span class="p-last-price">$230</span>
-							</div>
-						</div>
-						<div class="col-md-3 p-table-grid">
-							<div class="p-table-grad-heading">
-								<h6>產銷履歷</h6>
-							</div>
-							<div class="book-button-column">
-								<a href="#">abcd</a>
-							</div>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- //container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<!-- /script-for-timeline -->
+
+
+
+
 	</div>
+
+
+
 	<!-- //banner-bottom -->
 	<!-- footer -->
 	<div class="footer">
-		<!-- container -->
-		<div class="container">
-			<div class="footer-top-grids">
-				<div class="footer-grids">
-					<div class="col-md-3 footer-grid">
-						<h4>其他商品種類</h4>
-						<ul>
-							<li><a href="index.html">纖維作物</a></li>
-							<li><a href="flights-hotels.html">糧食作物</a></li>
-							<li><a href="index.html">薯類作物</a></li>
-							<li><a href="hotels.html">豆類作物</a></li>
-							<li><a href="bus.html">穀麥類作物</a></li>
-							<li><a href="index.html">飲料作物</a></li>
-							<li><a href="holidays.html">糖料作物</a></li>
-							<li><a href="hotels.html">香料作物</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3 footer-grid">
-						
-					</div>
-					<div class="col-md-3 footer-grid">
-	
-					</div>
-					<div class="col-md-3 footer-grid">
-					
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<!-- news-letter -->
-				<div class="news-letter">
-					<div class="news-letter-grids">
-						<div class="col-md-4 news-letter-grid">
-							<p>Toll Free No : <span>1234-5678-901</span></p>
-						</div>
-						<div class="col-md-4 news-letter-grid">
-							<p class="mail">Email : <a href="mailto:info@example.com">mail@example.com</a></p>
-						</div>
-						<div class="col-md-4 news-letter-grid">
-							<form>
-								<input type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-								<input type="submit" value="Subscribe">
-							</form>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-				<!-- //news-letter -->
-			</div>
+		<div class="copyright">
+			<p>Copyrights © 2016 a team</p>
 		</div>
-		<!-- //container -->
 	</div>
 	<!-- //footer -->
-	<div class="footer-bottom-grids">
-		<!-- container -->
-		<div class="container">
-				<div class="footer-bottom-top-grids">
-					<div class="col-md-4 footer-bottom-left">
-						<h4>Download our mobile Apps</h4>
-						<div class="d-apps">
-							<ul>
-								<li><a href="#"><img src="images/app1.png" alt="" /></a></li>
-								<li><a href="#"><img src="images/app2.png" alt="" /></a></a></li>
-								<li><a href="#"><img src="images/app3.png" alt="" /></a></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-md-4 footer-bottom-left">
-						<h4>We Accept</h4>
-						<div class="a-cards">
-							<ul>
-								<li><a href="#"><img src="images/c1.png" alt="" /></a></li>
-								<li><a href="#"><img src="images/c2.png" alt="" /></a></a></li>
-								<li><a href="#"><img src="images/c3.png" alt="" /></a></a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-md-4 footer-bottom-left">
-						<h4>Follow Us</h4>
-						<div class="social">
-							<ul>
-								<li><a href="#" class="facebook"> </a></li>
-								<li><a href="#" class="facebook twitter"> </a></li>
-								<li><a href="#" class="facebook chrome"> </a></li>
-								<li><a href="#" class="facebook dribbble"> </a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-					<div class="copyright">
-						<p>Copyrights © 2016 a team</p>
-					</div>
-				</div>
-		</div>
-	</div>
+
 	<script defer src="js/jquery.flexslider.js"></script>
 	<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
 	<script src="js/jquery-ui.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>	
+	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

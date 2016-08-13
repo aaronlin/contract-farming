@@ -361,6 +361,80 @@
 				<h3>商品種類</h3>
 			</div>
 			<div class="banner-bottom-grids">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<script>
+
+				 $.ajax({
+					 url: 'http://localhost:8080',
+					 type: 'GET',
+					 error: function(xhr) {
+						 for (var i = 0; i < 5; i++) {
+							 $(".cd-container").append("<div class='cd-timeline-block'><div class='cd-timeline-img cd-picture'><img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-picture.svg' alt='Picture'></div><div class='cd-timeline-content'><h2>Title of section 1</h2><p>pppp</p><span class='cd-date'>Jan 14</span></div></div>")
+						 }
+					 },
+					 success: function(res) {
+						 var categories = JSON.parse(res);
+						 console.log('categories: ', categories)
+						//  $(".product").html('作物： ' + resumes[0].product);
+						//  $(".farmer").html('農家： ' + resumes[0].farmer);
+						 categories.forEach( function(category) {
+					 			$(".banner-bottom-grids").append("\
+									 <div class='col-md-4 weekend-grids'>\
+					 					<div class='weekend-grid'>\
+					 						<a id=" + category.category_id + "class='product-image' href='products.html'>\
+					 							<img src='images/w2.jpg'/>\
+					 							<div class='deals-info-grid'>\
+					 								<div class='deals-grids'>\
+					 									<div class='col-md-8 deals-rating'>\
+					 										<h3>" + category.product + " ( " + category.count + " )" + "</h3>\
+					 										<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+					 										<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+					 										<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+					 									</div>\
+					 									<div class='col-md-4 deals-price'>\
+					 										<p>49元/斤</p>\
+					 									</div>\
+					 									<div class='clearfix'> </div>\
+					 								</div>\
+					 							</div>\
+					 						</a>\
+					 					</div>\
+					 				</div>")
+						 })
+						 $(".product-image").click(function(e) {
+						 //  pass down category id by localstorage
+						 console.log('category_id: ', this.id);
+							// 	localStorage.setItem("category_id", category);
+
+						 });
+					 }
+				 })
+			 </script>
+
+
+
+
+
+
+
+
+
+
+
+
 				<div class="col-md-4 weekend-grids">
 					<div class="weekend-grid">
 						<a href="products.html">
@@ -893,7 +967,7 @@
 	<script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
 	<script src="js/jquery-ui.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		$(function(){
 			SyntaxHighlighter.all();
 			});
@@ -905,6 +979,6 @@
 			}
 			});
 		});
-	</script>
+	</script> -->
 </body>
 </html>
