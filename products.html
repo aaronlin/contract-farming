@@ -28,6 +28,32 @@
 				width: 'auto', //auto or any width like 600px
 				fit: true   // 100% fit in a container
 			});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		});
 	</script>
 <!--pop-up-->
@@ -294,6 +320,35 @@
 							</div>
 						</div>
 					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 					<div class="col-md-9 product-right">
 						<div class="product-right-grids">
 							<div class="product-right-top">
@@ -325,7 +380,8 @@
 								</div>
 								<div class="clearfix"> </div>
 							</div>
-						</div><div class="product-right-grids">
+						</div>
+						<div class="product-right-grids">
 							<div class="product-right-top">
 								<div class="p-left">
 									<div class="p-right-img p-right-img1">
@@ -479,6 +535,99 @@
 		</div>
 		<!-- //container -->
 	</div>
+
+
+
+
+
+
+	<script>
+
+			var category_id = localStorage.getItem("category_id");
+
+			if (category_id !== '647') {
+				$.ajax({
+	 			 url: 'http://localhost:8080/category/' + category_id,
+	 			 type: 'GET',
+	 			 error: function(xhr) {
+	 			 	console.log('err');
+	 			 },
+	 			 success: function(res) {
+	 				 var products = JSON.parse(res);
+	 				 console.log(products);
+	 				 products.forEach( function(product) {
+	 						$(".col-md-9.product-right").prepend("\
+	 							<div class='product-right-grids'>\
+	 							 <div class='product-right-top'>\
+	 								 <div class='p-left'>\
+	 									 <div class='p-right-img'>\
+	 										 <a id='" + product.product_id + "' class='product-image' href='p-single.html' style='background: url(../" + product.img_path + ") no-repeat 0 0; background-size: cover; display: block;'> </a>\
+	 									 </div>\
+	 								 </div>\
+	 								 <div class='p-right'>\
+	 									 <div class='col-md-6 p-right-left'>\
+	 										 <a href='p-single.html'>" + product.product + "</a>\
+	 										 <div class='p-right-price'>\
+	 											 <span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+	 											 <span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+	 											 <span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
+	 										 </div>\
+	 									 </div>\
+	 									 <div class='col-md-6 p-right-right'>\
+	 										 <h6>Rating : 3.0/5</h6>\
+	 										 <p>farmers name</p>\
+	 										 <p>(123) Views</p>\
+	 										 <span class='p-offer'>$240</span>\
+	 									 </div>\
+	 									 <div class='clearfix'> </div>\
+	 								 </div>\
+	 								 <div class='clearfix'> </div>\
+	 							 </div>\
+	 						 </div>")
+	 				 })
+	 				 $(".product-image").click(function(e) {
+	 				 // pass down category id by localstorage
+	 					 console.log('product_id: ', this.id);
+	 					 localStorage.setItem("product_id", this.id);
+	 				});
+	 			 }
+	 		 })	
+			}
+	 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<!-- //banner-bottom -->
 	<!-- footer -->
 	<div class="footer">

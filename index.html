@@ -360,8 +360,9 @@
 			<div class="banner-bottom-info">
 				<h3>商品種類</h3>
 			</div>
-			<div class="banner-bottom-grids">
+			<div class="category-container">
 
+			</div>
 
 
 
@@ -387,19 +388,20 @@
 					 },
 					 success: function(res) {
 						 var categories = JSON.parse(res);
-						 console.log('categories: ', categories)
+						//  console.log('categories: ', categories)
 						//  $(".product").html('作物： ' + resumes[0].product);
 						//  $(".farmer").html('農家： ' + resumes[0].farmer);
 						 categories.forEach( function(category) {
-					 			$(".banner-bottom-grids").append("\
+								// 	console.log(category);
+						 		$(".category-container").prepend("\
 									 <div class='col-md-4 weekend-grids'>\
-					 					<div class='weekend-grid'>\
-					 						<a id=" + category.category_id + "class='product-image' href='products.html'>\
-					 							<img src='images/w2.jpg'/>\
+						 				<div class='weekend-grid'>\
+					 						<a id='" + category.category_id + "' class='product-image' href='products.html'>\
+					 							<img src=' " + category.img_path + "'/>\
 					 							<div class='deals-info-grid'>\
 					 								<div class='deals-grids'>\
 					 									<div class='col-md-8 deals-rating'>\
-					 										<h3>" + category.product + " ( " + category.count + " )" + "</h3>\
+					 										<h3>" + category.category + "</h3>\
 					 										<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
 					 										<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
 					 										<span class='glyphicon glyphicon-star' aria-hidden='true'></span>\
@@ -411,15 +413,14 @@
 					 								</div>\
 					 							</div>\
 					 						</a>\
-					 					</div>\
-					 				</div>")
+						 				</div>\
+						 			</div>")
 						 })
 						 $(".product-image").click(function(e) {
-						 //  pass down category id by localstorage
-						 console.log('category_id: ', this.id);
-							// 	localStorage.setItem("category_id", category);
-
-						 });
+						 // pass down category id by localstorage
+							 console.log('category_id: ', this.id);
+							 localStorage.setItem("category_id", this.id);
+						});
 					 }
 				 })
 			 </script>
@@ -434,7 +435,7 @@
 
 
 
-
+		 	<!-- <div class="banner-bottom-grids">
 				<div class="col-md-4 weekend-grids">
 					<div class="weekend-grid">
 						<a href="products.html">
@@ -640,7 +641,16 @@
 				</div>
 				<div class="clearfix"> </div>
 			</div>
-		</div>
+		</div> -->
+
+
+
+
+
+
+
+
+
 	<!-- banner-bottom -->
 	<div class="banner-bottom">
 		<!-- container -->
@@ -649,6 +659,28 @@
 				<!--<h3>全部商品</h3>-->
 			</div>
 			<div class="banner-bottom-grids">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 				<div class="col-md-4 banner-bottom-grid">
 
 

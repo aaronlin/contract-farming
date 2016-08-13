@@ -135,7 +135,10 @@
 								<!-- <p>Jump to: <a href="#">Over View</a>|<a href="#">農友介紹</a>|<a href="#">產銷履歷</a></p> -->
 								<section id="cd-timeline" class="cd-container">
 								<script>
-									 var pid = '1050810014400025';
+									//  var pid = '1050810014400025';
+									//  var pid = localStorage.getItem("product_id", this.id);
+									 var category_id = localStorage.getItem("category_id");
+									 var pid = category_id === '647' ? '1050810014400025' : localStorage.getItem("product_id", this.id);
 									 $.ajax({
 										 url: 'http://localhost:8080/resume/' + pid,
 										 type: 'GET',
